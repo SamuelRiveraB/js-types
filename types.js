@@ -23,7 +23,7 @@ var arrayObj = {
   2: 3,
 };
 
-// pass by value and by reference
+// Pass by value and by reference
 
 var a = 5;
 var b = a;
@@ -55,3 +55,29 @@ console.log(obj);
 console.log(clone);
 console.log(clone2);
 console.log(superClone);
+
+// Pass by reference exercise
+
+const number = 100;
+const string = "Jay";
+let newObj1 = {
+  value: "a",
+};
+let newObj2 = {
+  value: "b",
+};
+let newObj3 = newObj2;
+
+function change(number, string, newObj1, newObj2) {
+  number = number * 10;
+  string = "Pete";
+  newObj1 = newObj2;
+  newObj2.value = "c";
+  console.log(newObj1);
+}
+
+change(number, string, newObj1, newObj2);
+
+console.log(number);
+console.log(string);
+console.log(newObj1.value);
